@@ -70,6 +70,9 @@ $messageForm.addEventListener("submit", (e) => {
     const output = { ...user, message: $messageInput.value };
     socket.emit("message", output, (error) => {
       if (error) {
+        $messageButton.removeAttribute("disabled");
+        $messageInput.focus();
+        $messageInput.value = error;
       } else {
         $messageButton.removeAttribute("disabled");
         $messageInput.focus();
