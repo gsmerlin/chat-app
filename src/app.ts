@@ -3,6 +3,8 @@ import express from "express";
 import http from "http";
 import path from "path";
 
+
+// Creates express server
 const app = express();
 const distPath = path.join(__dirname, "../dist");
 
